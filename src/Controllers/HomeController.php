@@ -2,9 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Renderer;
-
-class HomeController
+class HomeController extends AbstractController
 {
     /**
      * Homepage
@@ -13,6 +11,6 @@ class HomeController
      */
     public function index(): string
     {
-        return Renderer::render('Home/home');
+        return $this->render('Home/home');
     }
 }

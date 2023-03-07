@@ -2,10 +2,9 @@
 
 namespace App\Controllers;
 
-use App\Renderer;
 use App\Models\ItemManager;
 
-class ItemController
+class ItemController extends AbstractController
 {
     /**
      * List User
@@ -17,7 +16,7 @@ class ItemController
         $ItemManager = new ItemManager();
         $items = $ItemManager->selectAll();
 
-        return Renderer::render('Item/index', ['items' => $items]);
+        return $this->render('Item/index', ['items' => $items]);
     }
 
     /**
@@ -32,7 +31,7 @@ class ItemController
         $itemManager = new ItemManager();
         $item = $itemManager->selectOneById($id);
 
-        return Renderer::render('Item/show', ['item' => $item]);
+        return $this->render('Item/show', ['item' => $item]);
     }
 
     /**
@@ -65,7 +64,7 @@ class ItemController
             return null;
         }
 
-        return Renderer::render('Item/edit', ['item' => $item]);
+        return $this->render('Item/edit', ['item' => $item]);
     }
 
     /**
@@ -93,7 +92,7 @@ class ItemController
             return null;
         }
 
-        return Renderer::render('Item/create');
+        return $this->render('Item/create');
     }
 
     /**
