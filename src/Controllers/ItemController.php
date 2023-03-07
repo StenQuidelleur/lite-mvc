@@ -7,7 +7,7 @@ use App\Models\ItemManager;
 class ItemController extends AbstractController
 {
     /**
-     * List User
+     * List Items
      *
      * @return string
      */
