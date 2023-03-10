@@ -79,7 +79,6 @@ class ItemController extends AbstractController
             // clean $_POST data
             $item = array_map('trim', $_POST);
             
-            
             // TODO validations (length, format...)
             if ($item['title'] === '') {
                 return 'Input Title is empty';
