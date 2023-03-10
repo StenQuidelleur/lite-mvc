@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Entity\Item;
 use App\Models\ItemManager;
 
 class ItemController extends AbstractController
@@ -83,6 +84,9 @@ class ItemController extends AbstractController
             if ($item['title'] === '') {
                 return 'Input Title is empty';
             }
+
+            // transform data to object
+            $item = new Item($item['title']);
 
             // if validation is ok, insert and redirection
             $itemManager = new ItemManager();

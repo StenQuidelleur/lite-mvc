@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use PDO;
+use App\Entity\Item;
 
 class ItemManager extends AbstractManager
 {
@@ -11,14 +12,14 @@ class ItemManager extends AbstractManager
     /**
      * Insert new item in database
      * 
-     * @param array $item
+     * @param Item $item
      * 
      * @return int
      */
-    public function insert(array $item): int
+    public function insert(Item $item): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`title`) VALUES (:title)");
-        $statement->bindValue('title', $item['title'], PDO::PARAM_STR);
+        $statement->bindValue('title', $item->getTitle(), PDO::PARAM_STR);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
