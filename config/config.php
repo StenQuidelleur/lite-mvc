@@ -11,3 +11,6 @@ define('APP_VIEW_PATH', __DIR__ . '/../src/Views/');
 
 // database dump file path for automatic import
 define('DB_DUMP_PATH', __DIR__ . '/../database.sql');
+
+// To load the DB, uncomment the line below, reload homepage and comment the line
+# require_once( __DIR__ . '/../migration.php');

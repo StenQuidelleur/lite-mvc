@@ -56,8 +56,11 @@ class ItemController extends AbstractController
                 return 'Input Title is empty';
             }
 
+            // transform data to object
+            $item = new Item($item['title']);
+
             // if validation is ok, update and redirection
-            $itemManager->update($item);
+            $itemManager->update($item, $id);
 
             header('Location: /items/show?id=' . $id);
 

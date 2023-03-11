@@ -6,7 +6,7 @@
     </nav>
     <div class="container">
         <div class="row my-5">
-            <h1 class="text-center">Item List</h1>
+            <h1 class="text-center">Item : <?= $item['title']; ?></h1>
         </div>
         <table class="table col-6">
         <thead>
